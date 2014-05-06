@@ -1,3 +1,4 @@
+require 'debugger'
 def organize_schools(schools)
   organized_schools = {}
   schools.each do |name, location_hash|
@@ -40,7 +41,7 @@ def first_wa(array)
   first_wa = nil
   array.each do |element|
     if element.match(/wa/)
-      first_wa = element
+      first_wa = element 
       break
     end
   end
@@ -50,31 +51,35 @@ end
 def find_cool(array)
   container = []
   array.each do |element|
-    container << element if element[:temperature] == "cool"
+    container << element if element[:temperature] == "cool" 
   end
   container
 end
 
 def count_elements(array)
-  array.each do |original_hash|
-    original_hash[:count] = 0
-    name = original_hash[:name]
-    array.each do |hash|
-      if hash[:name] == name
-        original_hash[:count] += 1
-      end
-    end
-  end.uniq
+  results = Hash.new(0)
+  array.each do |element|
+    results[element] += 1
+  end
+  container = []
+  results.each do |key, value|
+    key[:count] = value
+    container << key
+  end
+  container
 end
 
-def merge_data(arr1, arr2)
-  arr2[0].map do |name, prop_hash|
-    new_prop_hash = {}
-    arr1.each do |new_attr_hash|
-      if new_attr_hash[:first_name] == name
-        new_prop_hash = prop_hash.merge(new_attr_hash)
+def merge_data(keys, values)
+  container = []
+  keys.each do |person_name|
+    name = person_name[:first_name]
+    values.each do |person_data|
+      if person_data[name]
+        merged_person = person_data[name]
+        merged_person[:first_name] = name
+        container << merged_person
       end
     end
-    new_prop_hash
   end
+  container
 end
