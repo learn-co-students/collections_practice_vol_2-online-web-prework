@@ -146,7 +146,7 @@ describe 'collections practice vol 2.' do
 
     # Question 6
 
-    it 'using an array as input create a hash with two keys, "greater_than_10", "less_than_10" with values that are arrays of any numbers greater than 10 or less than 10' do
+    it 'combines two nested data structures into one' do
       expect(merge_data(keys, data)).to eq(merged_data)
     end
 
@@ -166,7 +166,7 @@ describe 'collections practice vol 2.' do
 
     # Question 8
 
-    it 'find all words that begin with "a" in the following array' do
+    it 'organizes the schools by location' do
       expect(organize_schools(schools)).to eq(organized_schools)
     end
 
