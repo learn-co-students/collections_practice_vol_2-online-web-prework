@@ -1,5 +1,5 @@
 ---
-  tags: arrays, iteration, hashes, conditionals, nested data structures
+  tags: arrays, iteration, hashes, conditionals, nested data structures, bonus
   languages: ruby
 ---
 
