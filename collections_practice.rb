@@ -23,14 +23,24 @@ def remove_non_strings(arg)
 end
 
 def count_elements(arg)
-  inst = {}
-  arg.collect do |key, value| 
-    if !inst[key] 
-      inst < key
-    else
-      inst[key] = inst[key] + 1
-    end
-  inst
+  counter = []
+  arg.each do |el|
+  	el.each do |key|
+ 		name = key #this will just assign the last element to the variable. need to compare it here with an if statement and then just assign it to counter
+ 		  counter.each do |elem|
+ 			  elem.each do |key, val|
+ 			    if elem[name].has_value?(name)
+ 				    elem[val] += 1
+ 			    else
+ 			    	counter << {:name=> name, :count => 1}
+ 			    end # if
+	       end #do 4
+	     end # do 3
+	   end #do 2
+	 end #do 1
+end #def
+
+  
 end
 
 def merge_data(arg)
