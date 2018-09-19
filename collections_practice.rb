@@ -20,5 +20,6 @@ def remove_non_strings(arr)
   arr.delete_if { |obj| !(obj.is_a? String) }
 end
 
-def count_elements(array)
-  arr.
+def count_elements(hash)
+  
+  hash.each do { key, val|
