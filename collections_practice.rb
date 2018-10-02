@@ -26,6 +26,7 @@ def count_elements(array)
   .map {|k,v|k.merge(count: v.length)}
 end 
 
+#RETURN TO THESE BELOW!!! 
 
 def merge_data(keys, data)
   merged = []
