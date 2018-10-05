@@ -17,11 +17,14 @@ def contain_a(array)
 end
 newarray
 end
+
 def first_wa(array)
  array.each do |i|
  return i if i.t_s == "wa"
 end
 end
+
+
 def remove_non_strings(array)
   array.delete_if do |i|
     i = i.to_s
