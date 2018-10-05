@@ -24,6 +24,7 @@ def first_wa(array)
   end
     
 end
+end
 def remove_non_strings(array)
   array.delete_if do |i|
     i = i.to_s
