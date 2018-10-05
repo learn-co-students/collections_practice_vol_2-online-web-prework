@@ -22,7 +22,7 @@ def first_wa(array)
   newarray = []
   array.each do |i|
     if  array[0] + array[1] == "wa"
-      newarray = 
+      newarray =  
   end 
   end 
 end
