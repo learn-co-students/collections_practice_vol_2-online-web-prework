@@ -19,9 +19,10 @@ newarray
 end
 
 def first_wa(array)
- array.each do |i|
- return i if i.t_s == "wa"
-end
+  checker = array[0] + array[1]
+  array.find do |i|
+    "wa" == element[0] + element[1]
+  end 
 end
 
 
