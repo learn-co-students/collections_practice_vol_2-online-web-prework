@@ -19,8 +19,9 @@ newarray
 end
 def first_wa(array)
  array.each do |i|
- i.to_s == "wa"
+  i.to_s == "wa"
  
+end
 end
 def remove_non_strings(array)
   array.delete_if do |i|
