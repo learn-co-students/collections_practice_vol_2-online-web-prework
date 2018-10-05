@@ -18,6 +18,8 @@ end
 newarray
 end
 def first_wa(array)
+  arg.each { |i| return i if i.to_s.include?("wa") }
+end
 def remove_non_strings(array)
   array.delete_if do |i|
     i = i.to_s
