@@ -17,3 +17,5 @@ def contain_a(array)
 end
 newarray
 end
+def remove_non_strings(array)
+  
