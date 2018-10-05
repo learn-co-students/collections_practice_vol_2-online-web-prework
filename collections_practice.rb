@@ -21,7 +21,7 @@ end
 def first_wa(array)
 
   array.each do |i|
-    if array(i) == "wa"
+    if array[0] + array[1] == "wa"
       i
     else
       nil
