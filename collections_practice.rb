@@ -18,7 +18,6 @@ end
 newarray
 end
 def first_wa(array)
- checkarray = array[0] + array[1]
  array.each do |i|
  return i if i.t_s == "wa"
 end
