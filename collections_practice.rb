@@ -21,7 +21,7 @@ end
 def first_wa(array)
   checker = array[0] + array[1]
   array.find do |i|
-    "wa" == element[0] + element[1]
+    "wa" ==checker
   end 
 end
 
