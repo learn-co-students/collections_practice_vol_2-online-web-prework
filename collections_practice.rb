@@ -19,8 +19,12 @@ newarray
 end
 
 def first_wa(array)
+
   array.each do |i|
-    "wa" == element[0] + element[1]
+    if array[i] == "wa"
+      i
+    else
+      nil
   end 
   end 
 end
