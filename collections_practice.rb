@@ -17,6 +17,7 @@ def contain_a(array)
 end
 newarray
 end
+def first_wa(array)
 def remove_non_strings(array)
   array.delete_if do |i|
     i = i.to_s
