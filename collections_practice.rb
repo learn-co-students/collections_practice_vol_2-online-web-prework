@@ -19,12 +19,10 @@ newarray
 end
 
 def first_wa(array)
-
+  newarray = []
   array.each do |i|
-    if wa = array[0] + array[1] == "wa"
-      i
-    else
-      nil
+    if wa = array[0] + array[1] 
+      
   end 
   end 
 end
