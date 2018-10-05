@@ -20,7 +20,7 @@ end
 def first_wa(array)
  checkarray = array[0] + array[1]
  array.each do |i|
- if i.to_s == "wa" == true
+ return i if checkarray[i] == i
 end
 end
 def remove_non_strings(array)
