@@ -19,7 +19,8 @@ newarray
 end
 def first_wa(array)
  array.each do |i|
- i.to_s == "wa" [0] == "w" && i[1] == "a"}
+ i.to_s == "wa"
+ 
 end
 def remove_non_strings(array)
   array.delete_if do |i|
