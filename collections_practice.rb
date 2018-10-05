@@ -21,8 +21,8 @@ end
 def first_wa(array)
   newarray = []
   array.each do |i|
-    if wa = array[0] + array[1] 
-      
+    if  array[0] + array[1] == "wa"
+      newarray = 
   end 
   end 
 end
