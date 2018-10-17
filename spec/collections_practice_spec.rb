@@ -4,11 +4,13 @@ describe 'collections practice vol 2.' do
 
   let(:keys) {
     [
-           {
-            :first_name => "blake"
+        {
+            :first_name => "blake",
+                 :motto => "Have a koala-ty day!"
         },
-           {
-            :first_name => "ashley"
+        {
+            :first_name => "ashley",
+                 :motto => "I dub thee, 'Lady Brett Ashley'."
         }
     ]
   }
@@ -32,17 +34,21 @@ describe 'collections practice vol 2.' do
 
   let(:merged_data) {
     [
-           {
+        {
              :first_name => "blake",
             :awesomeness => 10,
                  :height => "74",
-              :last_name => "johnson"
+              :last_name => "johnson",
+                  :motto => "Have a koala-ty day!"
+
         },
-           {
+        {
              :first_name => "ashley",
             :awesomeness => 9,
                  :height => 60,
-              :last_name => "dubs"
+              :last_name => "dubs",
+                  :motto => "I dub thee, 'Lady Brett Ashley'."
+
         }
     ]
   }
@@ -121,7 +127,7 @@ describe 'collections practice vol 2.' do
   end
 
   describe '#remove_non_strings' do
-    
+
     # Hint: Use the method "class"  "blake".class
 
     # Question 4
