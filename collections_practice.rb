@@ -28,6 +28,7 @@ end
 ## This lab is apparently in the wrong place in the curriculum
 ## The learn.co staff (Tyler Taylor) suggested skipping for now
 ## Anyway, the method below is broken right now
+## I'll try to return once I've learned more on hashes
 def count_elements(array)
   new_array = Array.new
   new_hash = Hash.new
@@ -36,4 +37,3 @@ def count_elements(array)
       new_hash << a
       new_array <<
   new_array << new_hash
-  
