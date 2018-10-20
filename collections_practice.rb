@@ -25,15 +25,72 @@ def first_wa(array)
   end
 end
 
-## This lab is apparently in the wrong place in the curriculum
-## The learn.co staff (Tyler Taylor) suggested skipping for now
-## Anyway, the method below is broken right now
-## I'll try to return once I've learned more on hashes
+## Already skipped this lab once. Here we go again.
 def count_elements(array)
-  new_array = Array.new
+  array.each do |hash_one|
+    hash_one[:count] = 0
+    name = hash_one[:name]
+    array.each do |hash_two|
+      if name == hash_two[:name]
+        hash_one[:count] += 1
+      end
+    end
+  end
+  array.uniq
+end
+
+def merge_data(keys, data)
+  #keys is a HASH of an ARRAY of TWO hashes
+  #data is a HASH of an ARRAY of ONE hash with TWO keys, each of whose values are hashes
+  #binding.pry
+  mid_array = Array.new
   new_hash = Hash.new
-  array.sort do |a, b|
-    if a == b
-      new_hash << a
-      new_array <<
-  new_array << new_hash
+  keys.each do |k, v|
+    data.each do |array|
+      mid_array << array.each do |name, info_set|
+        #binding.pry
+        if k[:first_name] == name
+          #binding.pry
+          new_hash = info_set
+          new_hash[:first_name] = k.values[0]
+        end
+      end
+    end
+  end
+  #binding.pry
+  mid_array.uniq[0].values
+end
+
+def find_cool(array)
+  #binding.pry
+  new_array = Array.new
+  array.each do |hash|
+    #binding.pry
+    hash.each do |key, value|
+      if value == "cool"
+        new_array << hash
+      end
+    end
+  end
+  new_array
+end
+
+def organize_schools(schools)
+  #it wants a hash where each key is a unique location
+  #and each value is an array of strings of the school names at that location
+  #binding.pry
+  new_hash = Hash.new
+  #there will be an `if` statement to check if location is Already
+  #a key in new_hash
+  schools.each do |key, value|
+    #binding.pry
+    if new_hash[value[:location]] == nil
+      #binding.pry
+      new_hash[value[:location]] = [key]
+    elsif !(new_hash[value[:location]].include?(key))
+      #binding.pry
+      new_hash[value[:location]] << key
+    end
+  end
+  new_hash
+end
