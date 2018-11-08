@@ -1,5 +1,5 @@
 # your code goes here
-
+require 'pry'
 def begins_with_r(tools)
   tools.all? do |i| 
     if i[0] == "r"
@@ -37,15 +37,53 @@ def remove_non_strings(array)
     e.class != String
   }
 end
-//dsa adas
-# def count_elements
-# end
 
-# def merge_data
-# end
 
-# def find_cool
-# end
+def count_elements(array)
+  a = Hash.new(0)
+  array.each { |i|
+  a[i] += 1
+  }
+  
+  b = []
+  a.each do |k,v|
+    b << k
+    b[b.length-1][:count] = v
+  end
+  b
+end
 
-# def organize_schools
-# end
+def merge_data(keys, data)
+  out = []
+  data.each do |hash|
+    hash.each do |name, attr|
+      keys.each do |key_value|
+        out << key_value.merge(attr) if key_value.values[0] == name
+      end
+    end
+  end
+   out
+end
+
+def find_cool(hash)
+  out = []
+  hash.each do |k|
+    if k[:temperature] == "cool"
+      out << k
+      return out
+    end
+  end
+end
+
+def organize_schools(data)
+    cities = Hash.new
+    data.each do |key, value|
+      if !cities.include?(value[:location])
+        cities[value[:location]] = []
+      end
+      if cities.has_key?(data[key][:location])
+        cities[data[key][:location]] << key
+      end
+    end
+    cities
+end
