@@ -89,7 +89,7 @@ def organize_schools(schools)
   sf_array=[]
   ch_array =[]
   
-  schools.each_with_object({}) do |(key1,value1), hash|
+  schools.each do |key1,value1|
     value1.each do |key2, value2|
       if value2 == "NYC"
         ny_array << key1
