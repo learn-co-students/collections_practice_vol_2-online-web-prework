@@ -27,28 +27,31 @@ end
 
 
 def count_elements(array)
-  array.map do |arr|
-    arr[:count]= 1
+  array.uniq.each do|arr|
+    count = 0
+    array.each do|arr2| 
+      if arr2 == arr 
+       count += 1 
+      end   
+    end
+    arr[:count] = count
   end
-  
-  empty_arr = []
-  array.select do |x|
-    if array.count(x) > 1
-      x[:count] += 1
-      empty_arr << x  
-      
-      array.map do |arr|
-        if arr[:name] != x[:name] 
-          empty_arr << arr
-        end
-      end
-    end  
-   end
-  empty_arr
 end
 
 def merge_data
-  
+  merged = []
+  keys.each do |key|
+  data.each do |h|
+    h.each do |name, item|
+      if name == keys[0].values.join(" ")  
+        merged << keys[0].merge(item)
+      elsif name == keys[1].values.join(" ")  
+        merged << keys[1].merge(item)
+       end   
+    end
+  end
+  end
+  merged.uniq
 end
 
 #if you iterate "hash within array", you can break array to hash
