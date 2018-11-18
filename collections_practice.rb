@@ -47,3 +47,24 @@ def count_elements(array)
     phrase1[:count] = count
   end
 end
+
+def merge_data(keys, data)
+  merged = []
+  keys.each {|i| data.first.map {|k,v| if i.values[0] == k then merged << i.merge(v) end}}
+  merged
+end
+
+def find_cool(array)
+  cool.select do |word|
+    word.any? do |key, value|
+      value == "cool"
+    end
+  end
+end
+
+def organize_schools(schools)
+  locations = {}
+  schools.collect {|key, value| locations[value[:location]] = []}
+  locations.each {|key,value| schools.each {|key1,value1| if key == value1[:location] then value << key1
+  end }}
+end
