@@ -43,7 +43,7 @@ def count_elements(array)
 end
 
 def merge_data(v1, v2)
-  new_array = v1.merge(v2) {|key, oldval, newval| newval - oldval}
+  new_array = v1.merge(v2) {|key, newval, oldval| oldval - newval}
   new_array
   
 end
