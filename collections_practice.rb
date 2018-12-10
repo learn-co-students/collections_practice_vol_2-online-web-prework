@@ -42,17 +42,19 @@ def count_elements(array)
       
 end
 
-def merge_data(set1, set2)
-  combo_set = set1.merge.(set2) {|key, oldval, newval| oldval - newval}
-  combo_set
+def merge_data(v1, v2)
+  new_array = v1.merge(v2) {|key, oldval, newval| newval - oldval}
+  new_array
+  
 end
 
 def find_cool(main_set)
-  
-      main_set.collect do |key, value|
-        if value == "cool"
-          puts "#{key}, #{value}"
+      main_set.collect do |cool_hash|
+        cool_hash.collect do |name, temp|
+          if temp == "cool"
+          puts "#{name}, #{temp}"
      end
   end
+end
 end
   
