@@ -91,7 +91,9 @@ describe 'collections practice vol 2.' do
   describe '#begins_with_r' do
     # Question 1
 
-    it 'Return true if every element of the tools array starts with an "r" and false otherwise.' do
+    it 'words.each do |words|
+  print words
+end and false otherwise.' do
       expect(begins_with_r(["ruby", "rspec", "rails"])).to eq(true)
     end
 
