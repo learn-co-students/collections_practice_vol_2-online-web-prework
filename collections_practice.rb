@@ -8,5 +8,6 @@ array.keep_if {|v|  v.include?('a')}
 
 
 end
-def first_wa(array)
+def first_wa(arr)
+  arr.select {|a| a.find(/^wa/)}
 end
