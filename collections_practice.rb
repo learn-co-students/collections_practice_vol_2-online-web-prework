@@ -37,22 +37,24 @@ end
 
 def find_cool(cool)
 a=[]
- a<<cool[1]
+cool.each do |k|
+a<< k if k[:temperature] == "cool"
 end
+a
+end
+
 def organize_schools(schools)
   h = {}
-    schools.map do |k,v|
+    schools.each  do |k,v|
       location=v[:location]
       school_name =k
-      if location =="NYC"
-        binding.pry
-        h[location] << school_name
 
-        elsif   location =="SF"
-            h[location] << school_name
-            else   location =="Chicago"
-                h[location] << school_name
-              end
-            end
-            h
+      if !h[location]
+          h[location] = [school_name]
+        else
+          h[location] << school_name
+
+        end
+        end
+h
 end
