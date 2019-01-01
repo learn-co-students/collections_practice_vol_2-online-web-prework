@@ -20,14 +20,39 @@ arr.group_by(&:itself)
 
 end
 def merge_data(keys,data)
-keys.map do |name|    name.values[0]
 
-data.map do |info|  info.keys[0]
-info.values[0]
-if name.values[0]== info.keys[0]
-binding.pry
-name.merge(info.values[0])
+  keys.map do |name|
+      a={}
+      first_name=name[:first_name]
+    data[0].map do  |k,v|
+      if   first_name==k
+          a=v
+      a[:first_name]= first_name
+
+    end
+      end
+  a
+  end
 end
+
+def find_cool(cool)
+a=[]
+ a<<cool[1]
 end
-end
+def organize_schools(schools)
+  h = {}
+    schools.map do |k,v|
+      location=v[:location]
+      school_name =k
+      if location =="NYC"
+        binding.pry
+        h[location] << school_name
+
+        elsif   location =="SF"
+            h[location] << school_name
+            else   location =="Chicago"
+                h[location] << school_name
+              end
+            end
+            h
 end
