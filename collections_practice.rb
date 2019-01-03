@@ -39,12 +39,17 @@ def count_elements(collection)
   end
 end
 
-def merge_data(keys, data)
-  new_keys_1 = {keys[0].keys.to_a[0] => data.to_a[0].to_a[0][0]}
-  new_data_1 = new_keys_1.merge(data[0].values.to_a[0])
-  new_keys_2 = {keys[1].keys.to_a[0] => data.to_a[0].to_a[1][0]}
-  new_data_2 = new_keys_2.merge(data[0].values.to_a[1])
- [new_data_1, new_data_2]
+def merge_data(keys_array,data_array)
+  data_array.flat_map do |person|
+    person.collect do |name, data|
+      keys_array.each do |first_name|
+        if first_name[:first_name] == name
+          person[name][:first_name] = name
+        end
+      end
+      person[name]
+    end
+  end
 end
 
 def find_cool(cool)
