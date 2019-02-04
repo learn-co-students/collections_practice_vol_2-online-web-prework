@@ -38,3 +38,20 @@ def remove_non_strings(array)
     array.delete_if{ |word| word.is_a?(Symbol) || word.is_a?(Integer)}
   end
 end
+
+
+def count_elements(array)
+  names_with_count = []
+  array.uniq.each do |element|
+    names_with_count << element
+  end
+  names_with_count.each do |element|
+    element[:count] = array.count(element)
+  end
+  names_with_count
+end
+
+def merge_data(keys, data)
+  
+end
+    
