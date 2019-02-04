@@ -14,9 +14,20 @@ end
 def contain_a(array)
   element_starting_with_a = []
   array.each do |word|
-    if word.include?("a") || word.is_a?(String)
-      array.push(word)
+    if word.include?("a") && word.is_a?(String)
+      element_starting_with_a << word
     end
   end
   element_starting_with_a
 end
+
+def first_wa(array)
+  first_element_with_wa = []
+  array.each do |word|
+    if word.is_a?(String) && word.start_with?("wa")
+      first_element_with_wa << word
+    end
+  end
+  first_element_with_wa[0]
+end
+
