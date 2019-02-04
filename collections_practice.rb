@@ -34,10 +34,7 @@ def first_wa(array)
 end
 
 def remove_non_strings(array)
-  array.each do |word| 
-    if word.is_a?(Integer) || word.is_a?(Symbol)
-      array.delete(word)
-    end
+  array.each do |word|
+    array.delete_if{ |word| word.is_a?(Symbol) || word.is_a?(Integer)}
   end
-  array
 end
