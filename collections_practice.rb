@@ -51,10 +51,8 @@ def count_elements(array)
   names_with_count
 end
 
-def merge_data(keys, data)
-  names = []
-  names.push(keys.values)
-  names
-end
+
+    
+ 
   
   
