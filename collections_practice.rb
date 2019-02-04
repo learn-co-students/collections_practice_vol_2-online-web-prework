@@ -52,12 +52,9 @@ def count_elements(array)
 end
 
 def merge_data(keys, data)
-  keys_combined = []
   names = []
   names.push(keys.values)
-  binding pry
-  keys_each do |name|
-    if data.include?(name[:first_name])
-      data[name.key]
+  names
 end
-    
+  
+  
