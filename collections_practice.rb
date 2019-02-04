@@ -14,7 +14,7 @@ end
 def contain_a(array)
   element_starting_with_a = []
   array.each do |word|
-<<<<<<< HEAD
+
     if  word.is_a?(String) && word.include?("a")
       element_starting_with_a << word
     end
@@ -33,4 +33,11 @@ def first_wa(array)
   first_element_with_wa[0]
 end
 
-
+def remove_non_strings(array)
+  array.each do |word| 
+    if word.is_a?(Integer) || word.is_a?(Symbol)
+      array.delete(word)
+    end
+  end
+  array
+end
