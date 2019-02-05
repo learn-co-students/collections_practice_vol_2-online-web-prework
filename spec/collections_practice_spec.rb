@@ -10,7 +10,10 @@ describe 'collections practice vol 2.' do
   let(:data) {
     [
            {"blake" => {:awesomeness => 10,:height => "74", :last_name => "johnson"},
+<<<<<<< HEAD
            
+=======
+>>>>>>> 89e37d35f4645186b34e22dee39e92e5573eb79e
             "ashley" => {
                 :awesomeness => 9,
                      :height => 60,

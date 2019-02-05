@@ -9,6 +9,7 @@ def begins_with_r(array)
     end
     word_with_r
 end
+ 
 
 
 def contain_a(array)
@@ -52,22 +53,13 @@ def count_elements(array)
 end
 
 def merge_data(keys, data)
-  first_name = []
-  keys.each do |description, name|
-    first_name << name
-  end
-  new_data_array = []
-  data.each do |name, value|
-
-    first_name.each do |name|
-      value.each do |attribute, info| 
-        new_data_array.push({attribute => info})
-        new_data_array.push({:first_name => name})
+  data.each do |name, info|
+    if name == keys[:first_name] 
+      name[:first_name] => "#{name}"
       end
-    end
   end
-  new_data_array
 end
+     
       
 
 
