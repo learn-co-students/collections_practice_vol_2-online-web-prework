@@ -51,6 +51,25 @@ def count_elements(array)
   names_with_count
 end
 
+def merge_data(keys, data)
+  first_name = []
+  keys.each do |description, name|
+    first_name << name
+  end
+  new_data_array = []
+  data.each do |name, value|
+
+    first_name.each do |name|
+      value.each do |attribute, info| 
+        new_data_array.push({attribute => info})
+        new_data_array.push({:first_name => name})
+      end
+    end
+  end
+  new_data_array
+end
+      
+
 
     
  

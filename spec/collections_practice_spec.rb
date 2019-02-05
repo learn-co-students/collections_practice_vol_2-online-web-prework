@@ -3,24 +3,14 @@ require 'spec_helper'
 describe 'collections practice vol 2.' do
 
   let(:keys) {
-    [
-           {
-            :first_name => "blake"
-        },
-           {
-            :first_name => "ashley"
-        }
-    ]
+    [ {:first_name => "blake"},{:first_name => "ashley" } ]
+    
   }
 
   let(:data) {
     [
-           {
-             "blake" => {
-                :awesomeness => 10,
-                     :height => "74",
-                  :last_name => "johnson"
-            },
+           {"blake" => {:awesomeness => 10,:height => "74", :last_name => "johnson"},
+           
             "ashley" => {
                 :awesomeness => 9,
                      :height => 60,
