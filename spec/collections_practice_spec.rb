@@ -9,25 +9,20 @@ describe 'collections practice vol 2.' do
 
   let(:data) {
     [
-           {"blake" => {:awesomeness => 10,:height => "74", :last_name => "johnson"},
+        {
+             "blake" => {:awesomeness => 10,:height => "74", :last_name => "johnson"},
 
-            "ashley" => {
-                :awesomeness => 9,
-                     :height => 60,
-                  :last_name => "dubs"
-            }
+             "ashley" => { :awesomeness => 9, :height => 60, :last_name => "dubs"}
         }
     ]
   }
 
   let(:merged_data) {
     [
-           {
-             :first_name => "blake",
+           { :first_name => "blake",
             :awesomeness => 10,
                  :height => "74",
-              :last_name => "johnson"
-        },
+              :last_name => "johnson" },
            {
              :first_name => "ashley",
             :awesomeness => 9,
