@@ -57,6 +57,24 @@ end
     
  
 def merge_data(keys, data)
+  
+  merged_datasets = []
+  data.each do |dataset|
+    
+    dataset.each do |key, value|
+       
+      keys.each.with_index do |names, index|
+        
+        names.each do |first_name, name|
+          if name == key
+           value[:first_name] = name
+           merged_datasets << value
+          end
+        end
+      end
+    end
+  end
+  merged_datasets
 
 end
      
