@@ -1,3 +1,5 @@
+require 'pry'
+
 def begins_with_r(array)
   word_with_r = true
   array.each do |word|
@@ -55,8 +57,7 @@ end
     
  
 def merge_data(keys, data)
-  merged_data << keys
-  merged_data
+
 end
      
       
