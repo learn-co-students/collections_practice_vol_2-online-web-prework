@@ -78,7 +78,20 @@ def merge_data(keys, data)
 
 end
      
+
+def find_cool(hash)
+  cool_hash = []
+  hash.each do |key, value|
+    key.each do |specs, data|
+      if data.is_a?(String) && data == "cool"
+      cool_hash << key
+      end
+    end 
+  end
+cool_hash
+end
       
+
 
 
   
