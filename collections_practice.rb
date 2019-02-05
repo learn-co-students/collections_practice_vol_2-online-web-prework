@@ -52,18 +52,20 @@ def count_elements(array)
   names_with_count
 end
 
+    
+ 
 def merge_data(keys, data)
+  merged_data = []
   data.each do |name, info|
     if name == keys[:first_name] 
       name[:first_name] => "#{name}"
-      end
+    end
+  
   end
 end
      
       
 
 
-    
- 
   
   
