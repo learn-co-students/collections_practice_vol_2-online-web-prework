@@ -28,4 +28,10 @@ end
  
 #words.detect{|i| i.start_with?("wa")}
 ####words.all? {|word| word.start_with?("wa")}
+
+def remove_non_strings(array)
+#if .class !== string delete
 #binding.pry
+array.delete_if { |obj| !(obj.is_a? String) }
+#array.grep(String)
+end
