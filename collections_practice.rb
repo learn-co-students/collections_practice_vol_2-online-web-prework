@@ -14,7 +14,7 @@ def first_wa(array)
  #string = ""
  #string << array.to_s
  # binding.pry
- array.select do |word| 
+ array.detect do |word| 
   word.to_s.start_with?("wa")
  end
 end
