@@ -92,7 +92,7 @@ describe 'collections practice vol 2.' do
     # Question 1
 
     it 'Return true if every element of the tools array starts with an "r" and false otherwise.' do
-      expect(begins_with_r(["ruby", "rspec", "rails"])).to eq(true)
+      expect(begins_with_r(["ruby", "rspec", "sails"])).to eq(true)
     end
 
     it "should return false if there's an element that does not begin with r" do
