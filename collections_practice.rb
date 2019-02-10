@@ -1,5 +1,3 @@
-require 'pry'
-
 def begins_with_r(array)
   x = 0
   array.each do |arr|
