@@ -25,21 +25,13 @@ def first_wa(word_list)
 end 
 
 def remove_non_strings(word_list)
-  word_list.delete_if do |word|
-     word != word.class
-  #binding.pry
-
-end  
-end  
+  word_list.keep_if {|word| word.class == String}
+ end
+ 
 def count_elements(array)
-  a_counter = 0 
-  b_counter = 0 
+  
   array.each do |item|
-    if array[:name] == "ashley"
-      a_counter += 1 
-    elsif 
-      array[:name] == "blake"
-      b_counter += 1 
+    
       
       
     end 
