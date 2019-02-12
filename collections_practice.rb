@@ -21,13 +21,16 @@ end
 def first_wa(word_list)
   string_array = []
   word_list.each {|word| string_array << word.to_s}
-  string_array.detect {|word| word.include?("wa")} 
+  string_array.detect {|word| word.start_with?("wa")} 
 end 
 
 def remove_non_strings(word_list)
-  word_list.delete_if {|word| word != ""}
-end
+  word_list.delete_if do |word|
+     word != word.class
+  #binding.pry
 
+end  
+end  
 def count_elements(array)
   a_counter = 0 
   b_counter = 0 
