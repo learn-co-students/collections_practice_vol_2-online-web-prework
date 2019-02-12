@@ -24,9 +24,9 @@ def first_wa(word_list)
   string_array.detect {|word| word.include?("wa")} 
 end 
 
-#def remove_non_strings(word_list)
-#  word_list.delete_if {|word| word != ""}
-#end
+def remove_non_strings(word_list)
+  word_list.delete_if {|word| word != ""}
+end
 
 def count_elements(array)
   a_counter = 0 
@@ -41,7 +41,7 @@ def count_elements(array)
       
     end 
   end 
- # binding.pry 
+  
 end
 
       
