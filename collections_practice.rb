@@ -29,21 +29,17 @@ def remove_non_strings(word_list)
  end
  
 def count_elements(array)
-  
- new_array = []
-  
-  array.each {|item| counter = item[:count] = 1} 
-    
-    
-    if new_array.include?(item) == false
-
+  new_array = []
+  array.each do |item| 
+   
+    if new_array.any? {|element| item[:name] == element[:name]}
+      new_array.each {|i| i[:count] += 1 if i[:name] == item[:name]}
+    else 
+      item[:count] = 1
       new_array << item
-    elsif
-      new_array.include?(item)
-      new_array.each {|i| i[:count] += 1}
-      end 
-      
-  binding.pry  
+    end
+  end 
+new_array 
 end
   
  
