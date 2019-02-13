@@ -31,7 +31,6 @@ def remove_non_strings(word_list)
 def count_elements(array)
   new_array = []
   array.each do |item| 
-   
     if new_array.any? {|element| item[:name] == element[:name]}
       new_array.each {|i| i[:count] += 1 if i[:name] == item[:name]}
     else 
@@ -39,7 +38,7 @@ def count_elements(array)
       new_array << item
     end
   end 
-new_array 
+  new_array 
 end
   
  
