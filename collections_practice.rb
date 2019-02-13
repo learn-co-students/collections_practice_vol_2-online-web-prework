@@ -30,14 +30,24 @@ def remove_non_strings(word_list)
  
 def count_elements(array)
   
-  array.each do |item|
-    
-      
-      
-    end 
-  end 
+ new_array = []
   
+  array.each {|item| counter = item[:count] = 1} 
+    
+    
+    if new_array.include?(item) == false
+
+      new_array << item
+    elsif
+      new_array.include?(item)
+      new_array.each {|i| i[:count] += 1}
+      end 
+      
+  binding.pry  
 end
+  
+ 
+
 
       
   
