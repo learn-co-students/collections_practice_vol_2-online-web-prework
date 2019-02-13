@@ -45,16 +45,13 @@ def count_elements(array)
   new_array = []
   array.each do |item|
     item[:count] = 1 
-    
     if new_array.include?(item) == false 
       new_array << item 
     elsif new_array.include?(item)
       new_array.collect {|i| i[:count] += 1}
     #binding.pry  
     end
-    
   end
-   
   new_array 
 end 
       
