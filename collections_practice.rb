@@ -28,18 +28,36 @@ def remove_non_strings(word_list)
   word_list.keep_if {|word| word.class == String}
  end
  
+#def count_elements(array)
+#  new_array = []
+#  array.each do |item| 
+#    if new_array.any? {|element| item[:name] == element[:name]}
+#      new_array.each {|i| i[:count] += 1 if i[:name] == item[:name]}
+#    else 
+#      item[:count] = 1
+#      new_array << item
+#    end
+#  end 
+#  new_array 
+#end
+
 def count_elements(array)
   new_array = []
-  array.each do |item| 
-    if new_array.any? {|element| item[:name] == element[:name]}
-      new_array.each {|i| i[:count] += 1 if i[:name] == item[:name]}
-    else 
-      item[:count] = 1
-      new_array << item
+  array.each do |item|
+    item[:count] = 1 
+    
+    if new_array.include?(item) == false 
+      new_array << item 
+    elsif new_array.include?(item)
+      new_array.collect {|i| i[:count] += 1}
+    #binding.pry  
     end
-  end 
+    
+  end
+   
   new_array 
-end
+end 
+      
   
  
 
