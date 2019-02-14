@@ -46,7 +46,7 @@ def remove_non_strings(word_list)
 # we started by trying to fix my broken #count_elements(array) below.
 # We ended up with an almost completely changed method, but stated
 # that we kept the logic of my original method attempt. It was a fast
-# session and I did not completely follow having a hard time keeping up.
+# session and I did not completely follow, having a hard time keeping up.
 # I worked after the session to verbalize each line of code above to
 # follow and understand why the above code passes. But in the end, I went
 # back to and problem solved my original method attempt. I got it to pass,
@@ -68,23 +68,14 @@ end
  
  
 def merge_data(keys, data)
-  
-  i = 0 
-  
-  while i < keys.length 
-#binding.pry   
+  index = 0 
+  while index < keys.length 
     data.each do |item|
-       
       item.each do |key, value|
-    
-        if keys[i].has_value?(key)
-        
-          keys[i].merge!(value)
-       
+        if keys[index].has_value?(key)
+          keys[index].merge!(value)
         end 
-      
       end 
-    
     end
     i += 1 
   end 
@@ -98,7 +89,8 @@ def find_cool(hash)
     if item[:temperature] == "cool"
       new_array << item 
     end 
-  end 
+  end
+  binding.pry
   new_array
 end 
       
