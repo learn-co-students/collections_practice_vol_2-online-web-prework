@@ -7,7 +7,7 @@ end
 #def contain_a(word_list)
 #  word_a_list = []
 #  word_list.each do |word|
-#    if word.include?("a")
+#    if word.include?("a") 
 #      word_a_list << word 
 #    end 
 #  end
@@ -69,7 +69,7 @@ end
  
 def merge_data(keys, data)
   index = 0 
-  while index < keys.length 
+  while index < keys.length
     data.each do |item|
       item.each do |key, value|
         if keys[index].has_value?(key)
@@ -77,9 +77,9 @@ def merge_data(keys, data)
         end 
       end 
     end
-    i += 1 
+    index += 1 
   end 
-  return keys 
+  keys 
 end
 
 
@@ -90,9 +90,21 @@ def find_cool(hash)
       new_array << item 
     end 
   end
-  binding.pry
+#  binding.pry
   new_array
-end 
+end
+
+
+def organize_schools(schools)
+ # binding.pry 
+  
+  schools.each do |school_key, location_value|
+    
+    location_value.each do |location_key, city_value|
+      
+      if 
+  
+end  
       
   
  
