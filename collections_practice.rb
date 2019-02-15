@@ -96,14 +96,20 @@ end
 
 
 def organize_schools(schools)
- # binding.pry 
+#  binding.pry
+  organized_schools = {}
   
   schools.each do |school_key, location_value|
     
     location_value.each do |location_key, city_value|
       
-      if 
-  
+      
+      
+      
+        
+      
+    end 
+  end 
 end  
       
   
