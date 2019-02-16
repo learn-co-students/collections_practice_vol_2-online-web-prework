@@ -96,20 +96,20 @@ end
 
 
 def organize_schools(schools)
-#  binding.pry
   organized_schools = {}
-  
-  schools.each do |school_key, location_value|
-    
-    location_value.each do |location_key, city_value|
-      
-      
-      
-      
-        
-      
+  schools.each do |school_key, location_hash|
+    location_hash.each do |location_key, city_value|
+      if organized_schools.has_key?(city_value) == false 
+        organized_schools[city_value] = [school_key]
+#binding.pry        
+      elsif
+        organized_schools.has_key?(city_value)
+        organized_schools[city_value] << school_key
+      end   
     end 
-  end 
+  end
+#binding.pry    
+  organized_schools
 end  
       
   
