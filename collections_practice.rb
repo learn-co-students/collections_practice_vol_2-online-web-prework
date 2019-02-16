@@ -1,3 +1,4 @@
+
 def begins_with_r(tools)
    tools.all? do |word|
     word.start_with?("r")
@@ -45,18 +46,82 @@ def remove_non_strings(notstring)
 end
 
 def count_elements(names)
-  new_string = nil
-  combo = []
+  x = ("names")
+  counted_elements = []
+   
   names.each do |element|
-    if element.count(+1)
-      new_string = element
-      combo << new_string
-      break
-      
+    element[:count] = 0 
     
+    names.each do |name|
+      
+    if element[:name] == name[:name]
+       element[:count] += 1 
+    end  
+      
+    end
+   
   end
-    end 
-    combo
+    names.uniq
+      
+ end
+ 
+def merge_data(keys, data)
+  
+   a = 0 
+   
+   while a < keys.length 
+     data.each do |element|
+       element.each do |ke, val|
+         if keys[a].has_value?(ke)
+            keys[a].merge!(val)
+         end
+       end
+     end
+     a+=1 
+   end
+   keys
 end
+
+def find_cool(cool)
+  h = 0 
+  found_cool = []
+  while h < cool.length
+   
+  
+    cool[h].collect do |ke, val|
+     if val == "cool"
+       found_cool << cool[h]
+       
+     end
+    end
+    h += 1
+  end
+  found_cool
+end
+def organize_schools(schools)
+  
+  
+  
+  
+  
+  
+  
+  
+end
+
+  
+  
+    
+  
+
+    
+    
+
+
+  
+
+    
+  
+
     
     
