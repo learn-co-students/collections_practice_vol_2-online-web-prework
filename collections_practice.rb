@@ -43,3 +43,20 @@ def remove_non_strings(notstring)
     
   remove_string
 end
+
+def count_elements(names)
+  new_string = nil
+  combo = []
+  names.each do |element|
+    if element.count(+1)
+      new_string = element
+      combo << new_string
+      break
+      
+    
+  end
+    end 
+    combo
+end
+    
+    
