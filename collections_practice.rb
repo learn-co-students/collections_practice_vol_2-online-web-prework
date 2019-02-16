@@ -14,10 +14,32 @@ def contain_a(element)
 end
 
 def first_wa(array)
-  array.select do |word|
-    word.first("wa")
+  wa_word = nil
+  
+  array.each do |word|
+
+   if  word.match(/wa/)
+    wa_word = word
+    break
+   end
+ 
   end
-  
-  
-  
+ wa_word
+ end
+
+def remove_non_strings(notstring)
+  nostring = nil
+  remove_string = []
+
+  notstring.each do |element|
+    
+    if element.delete(" ")
+       nostring = element
+       remove_string << nostring
+       
+       break
+  end     
+    end
+    
+  remove_string
 end
