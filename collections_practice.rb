@@ -114,10 +114,10 @@ schools = {
       }
   }
   
-organize_schools = {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
-                    "SF"=>["dev boot camp", "Hack Reactor"],
-                    "Chicago"=>["dev boot camp chicago"]
-                   }
+#organize_schools = {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
+#                    "SF"=>["dev boot camp", "Hack Reactor"],
+#                    "Chicago"=>["dev boot camp chicago"]
+#                   }
 
 def organize_schools(schools)
   nyc_arr = []
