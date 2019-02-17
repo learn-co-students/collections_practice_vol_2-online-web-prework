@@ -1,4 +1,4 @@
-
+require "pry"
 def begins_with_r(tools)
    tools.all? do |word|
     word.start_with?("r")
@@ -98,14 +98,23 @@ def find_cool(cool)
   end
   found_cool
 end
+
 def organize_schools(schools)
-  
-  
-  
-  
-  
-  
-  
+  organized_schools = {}
+ #{"Chicago"=>["dev boot camp chicago"], "NYC"=>["flatiron school bk", "flatiron school", "general assembly"], "SF"=>["dev boot camp", "Hack Reactor"]}
+  schools.each do |key, location|
+    location.each do |ke, locate|
+      
+      if !organized_schools.has_key?(locate)
+        organized_schools[locate] = [key]
+        
+        elsif organized_schools.has_key?(locate)
+              organized_schools[locate] << key
+        
+      end
+    end     
+  end
+             organized_schools
   
 end
 
