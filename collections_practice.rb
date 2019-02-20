@@ -124,7 +124,7 @@ def organize_schools(schools_hash)
     end
     
     result[location] = schools_array
-    binding.pry
+
   end
-  
+  result
 end
