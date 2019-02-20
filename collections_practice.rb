@@ -75,6 +75,7 @@ def merge_data(name_array, data_array)
   
   # result = []
 
+
   # keys.each do |key_hash|
   #   key_hash.each do |k, v|
   #     name = v
@@ -90,4 +91,40 @@ def merge_data(name_array, data_array)
 
 end
 
+def find_cool(array_of_hash)
+  
+    array_of_hash.map do |hash| 
+      if hash[:temperature] == "cool"
+        hash
+      end
+    end.compact
+end
+
+def organize_schools(schools_hash)
+  uniq_locations_array = []  
+  workable_locations_hash = schools_hash.values
+
+  workable_locations_hash.each do |location_hash|
+    uniq_locations_array << location_hash.values.join("")
+  end
+  
+  uniq_locations_array = uniq_locations_array.uniq
+  
+  result = {}
+  
+  uniq_locations_array.each do |location|
+    schools_array = []
     
+    schools_hash.each do |school, location_hash|
+      # binding.pry
+      if location_hash.values.join("") == location
+        schools_array << school
+      end
+      # binding.pry
+    end
+    
+    result[location] = schools_array
+    binding.pry
+  end
+  
+end
