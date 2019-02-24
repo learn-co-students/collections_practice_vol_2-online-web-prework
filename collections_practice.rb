@@ -78,9 +78,7 @@ def organize_schools(schools)
   
   location_array.each { |item|
     byLocations[item]  = schools.collect {|name, location|
-      if schools[name][:location] == item
-        name
-      end
+      name if schools[name][:location] == item
     }.compact
     
   }
