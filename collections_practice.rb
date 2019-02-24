@@ -65,22 +65,19 @@ def organize_schools(schools)
 # "Hack Reactor"=>{:location=>"SF"}}
   
 # expects 
-  
 # {"Chicago"=>["dev boot camp chicago"], "NYC"=>["flatiron school bk", "flatiron school", "general assembly"], "SF"=>["dev boot camp", "Hack Reactor"]}
   
   byLocations = {}
   location_array = []
   
-  location_array = schools.collect {|name, location| 
+  location_array = schools.collect {|name, location|
     schools[name][:location]
   }.uniq.sort
-  
   
   location_array.each { |item|
     byLocations[item]  = schools.collect {|name, location|
       name if schools[name][:location] == item
     }.compact
-    
   }
   
   byLocations
