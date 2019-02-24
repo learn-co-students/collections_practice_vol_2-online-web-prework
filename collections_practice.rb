@@ -72,7 +72,7 @@ def organize_schools(schools)
   location_array = []
   
   location_array = schools.collect {|name, location| 
-    schools["#{name}"][:location]
+    schools[name][:location]
   }.uniq.sort
   
   
