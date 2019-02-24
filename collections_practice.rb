@@ -56,19 +56,17 @@ def find_cool(cool)
 end
 
 def organize_schools(schools)
-#   # schools = {"flatiron school bk"=>{:location=>"NYC"},
+# schools = 
+# {"flatiron school bk"=>{:location=>"NYC"},
 # "flatiron school"=>{:location=>"NYC"},
 # "dev boot camp"=>{:location=>"SF"},
 # "dev boot camp chicago"=>{:location=>"Chicago"},
 # "general assembly"=>{:location=>"NYC"},
 # "Hack Reactor"=>{:location=>"SF"}}
   
-  # expects {"Chicago"=>["dev boot camp chicago"], "NYC"=>["flatiron school bk", "flatiron school", "general assembly"], "SF"=>["dev boot camp", "Hack Reactor"]}
+# expects 
   
-  # a hash with keys of the location as strings
-  # each location is assigned an array of school names as strings for that location
-  
-  binding.pry
+# {"Chicago"=>["dev boot camp chicago"], "NYC"=>["flatiron school bk", "flatiron school", "general assembly"], "SF"=>["dev boot camp", "Hack Reactor"]}
   
   byLocations = {}
   location_array = []
