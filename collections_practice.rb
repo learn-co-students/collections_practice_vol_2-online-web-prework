@@ -40,7 +40,7 @@ def count_elements(array)
   return counts_array
 end
 
-def merge_data(keys, data) #WHOMEVER WROTE THE TEST FOR THIS METHOD/LAB IS A HORRIBLE PERSON. Innapropriate for not teaching hashes first.
+def merge_data(keys, data)
   new_hash_array = []
   keys.each do |key_hash|
     name_key = key_hash[:first_name]
@@ -56,7 +56,7 @@ def find_cool(array)
   end
 end
 
-def organize_schools(hash)  #WHY IS INTRO TO HASHES AFTER THIS?
+def organize_schools(hash)
   organized_hash = {}
   hash.each do |school_name_key, school_info_value|
     city = school_info_value[:location]
