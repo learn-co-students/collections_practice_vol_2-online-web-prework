@@ -15,14 +15,6 @@ def contain_a(array)
   container
 end
 
-def remove_non_strings(array)
-  container = []
-  array.each do |element|
-    container << element if element.is_a?(String)
-  end
-  container
-end
-
 def first_wa(array)
   first_wa = nil
   array.each do |element|
@@ -34,10 +26,10 @@ def first_wa(array)
   first_wa
 end
 
-def find_cool(array)
+def remove_non_strings(array)
   container = []
   array.each do |element|
-    container << element if element[:temperature] == "cool"
+    container << element if element.is_a?(String)
   end
   container
 end
@@ -64,6 +56,14 @@ def merge_data(arr1, arr2)
     end
     new_prop_hash
   end
+end
+
+def find_cool(array)
+  container = []
+  array.each do |element|
+    container << element if element[:temperature] == "cool"
+  end
+  container
 end
 
 def organize_schools(schools)
