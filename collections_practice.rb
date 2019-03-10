@@ -53,8 +53,15 @@ return final
 
 end
 
-
-
-
-names = ["ruby", "rspec", "sails",4,8]
-#binding.pry
+def merge_data(keys,data)
+  final = []
+  keys.each do |hvalue|
+    hvalue.each do |key,name|
+      binding.pry
+      if names == name
+        binding.pry
+      
+          end
+       end
+end
+end
