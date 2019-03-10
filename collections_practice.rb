@@ -54,14 +54,59 @@ return final
 end
 
 def merge_data(keys,data)
-  final = []
+  sarray = []
+  shash = {}
   keys.each do |hvalue|
     hvalue.each do |key,name|
-      binding.pry
-      if names == name
-        binding.pry
-      
-          end
+      sarray << {key => name}
+      #binding.pry
        end
+    end
+  data.each do  |firsth|
+  firsth.each do |sech|
+   sarray.each do |fname|
+     if sech[0] == fname[:first_name]
+        sech[1].each do |key, value|
+          fname[key] = value
+        end
+  end
+  
 end
+end
+#binding.pry
+return sarray
+  end
+  
+end
+
+def find_cool(array)
+ cool = []
+  array.each do |hash|
+    hash.each do |key, value|
+    # binding.pry
+      if value == "cool"
+      cool << hash
+       end
+     end
+    end
+return cool
+end
+
+def organize_schools(array)
+ shash = {}
+  array.each do |school,location|
+   # binding.pry
+    if shash[location[:location]] == nil
+    shash[location[:location]] = []
+    shash[location[:location]] << school
+    #binding.pry
+  else 
+    shash[location[:location]] << school
+ 
+  #binding.pry
+end
+
+end
+return shash
+
 end
