@@ -59,55 +59,20 @@ end
 
 # Organize schools hash by location
 def organize_schools(schools)
-  school_names = []
   school_hash = {}
 
-  # Iterate through hash of school_name
-  # Return location => school_name array
-  schools.each do |value, key|
-    
-    binding.pry
-    
-    # if school location doesn't exist, create and add first name to array
-    if school_hash[key[:location]].nil? 
-      school_hash[key[:location]] = [value]
-      puts "Created first location and school name: #{school_hash}"
-  
+  # iterate through school_names and locations
+  schools.each do |school_name, place|
+    location = place[:location]
+
+    # if school location doesn't exist, create new key and empty array
+    if school_hash[location].nil?
+      school_hash[location] = []
     # else add to existing school name array 
-    else
-      # How to simply add to array?
-      # school_hash[key[:location]] = << name
-      # puts "Added #{name} to school names: #{school_hash}"
     end 
-
-    puts school_hash
     
+    # add to location array 
+    school_hash[location] << school_name
   end 
+  school_hash
 end
-
-# let(:schools) {
-#     {
-        key                     value
-#       "flatiron school bk" => {:location => "NYC"},
-#       "flatiron school" => {
-#         :location => "NYC"
-#       },
-#       "dev boot camp" => {
-#         :location => "SF"
-#       },
-#       "dev boot camp chicago" => {
-#         :location => "Chicago"
-#       },
-#       "general assembly" => {
-#         :location => "NYC"
-#       },
-#       "Hack Reactor" => {
-#         :location => "SF"
-#       }
-#     }
-#   }
-#   let(:organized_schools) {
-#     {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
-#     "SF"=>["dev boot camp", "Hack Reactor"],
-#     "Chicago"=>["dev boot camp chicago"]}
-#   }
