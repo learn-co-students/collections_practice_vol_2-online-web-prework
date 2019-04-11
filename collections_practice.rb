@@ -13,6 +13,7 @@ end
 
 # Return an array of all elements that contain the letter 'a'
 def contain_a(array)
+  # map all elements that include "a", then remove nils
   array.map { |element| element.include?("a") ? element : nil }.compact
 end
 
@@ -54,7 +55,7 @@ end
 
 # Return an array of all hashes that contain :temperature => "cool"
 def find_cool(hash)
-    hash.delete_if { |people| people[:temperature] != "cool" }
+  hash.delete_if { |people| people[:temperature] != "cool" }
 end
 
 # Organize schools hash by location
@@ -68,7 +69,6 @@ def organize_schools(schools)
     # if school location doesn't exist, create new key and empty array
     if school_hash[location].nil?
       school_hash[location] = []
-    # else add to existing school name array 
     end 
     
     # add to location array 
