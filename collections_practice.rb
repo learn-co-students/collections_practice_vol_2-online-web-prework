@@ -2,21 +2,22 @@ require 'pry'
 
 def begins_with_r(group)
   words = [ ]
-  group.map do |word|
+  group.each do |word|
    if word.start_with?("r") == true
      words << word
-     if words == group
-       return true
-   else
-     return false
-      end
     end
+  end
+  if group == words
+    return true
+  else  
+    return false
   end
 end  
 
+
 def contain_a(group)
   words = [ ]
-  group.map do |word|
+  group.each do |word|
     if word.include?("a") == true
       words << word
     end  
@@ -26,36 +27,41 @@ end
 
 def first_wa(group)
   words = [ ]
-  group.map do |word|
-   if word.start_with?("wa") == true
+  group.each do |word|
+    if word.instance_of?(String) == true
+     if word.start_with?("wa") == true
      words << word
-  
+      end
     end
   end
   return words[0]
 end  
 
 def remove_non_strings(group)
+  strings = [ ]
   group.map do |item|
-    if item.instance_of?(String) == false
-      word.delete!
+    if item.instance_of?(String) == true
+      strings << item
     end
   end
-  return group
+  return strings
 end  
 
-def count_elements
+def count_elements(group)
+  item_count = 0
+  group.each { |item| item_count += 1 }
+    return item_count
+end  
+
+def merge_data(a, b)
+  
   
 end  
 
-def merge_data
+def find_cool(group)
   
 end  
 
-def find_cool
-  
-end  
-
-def organize_schools
+def organize_schools(schools)
   
 end  
