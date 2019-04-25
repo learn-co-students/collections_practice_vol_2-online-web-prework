@@ -59,7 +59,11 @@ def merge_data(a, b)
 end  
 
 def find_cool(group)
-  
+  group.each do |set|
+    if set.value?("cool") == true
+      return set
+    end
+  end
 end  
 
 def organize_schools(schools)
