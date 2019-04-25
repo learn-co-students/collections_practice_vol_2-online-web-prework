@@ -49,8 +49,9 @@ end
 
 def count_elements(group)
   item_count = 0
-  group.each { |item| item_count += 1 }
-    return item_count
+  group.each {|set, item| item_count += 1 }
+    group[set][:counter] = item_count
+    return group
 end  
 
 def merge_data(a, b)
@@ -59,11 +60,13 @@ def merge_data(a, b)
 end  
 
 def find_cool(group)
+  new = [ ]
   group.each do |set|
     if set.value?("cool") == true
-      return set
+      new << set
     end
   end
+  return new
 end  
 
 def organize_schools(schools)
