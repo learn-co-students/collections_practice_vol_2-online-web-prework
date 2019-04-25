@@ -24,8 +24,15 @@ def contain_a(group)
   return words
 end 
 
-def first_wa
+def first_wa(group)
+  words = [ ]
+  group.map do |word|
+   if word.start_with?("wa") == true
+     words << word
   
+    end
+  end
+  return words[0]
 end  
 
 def remove_non_strings(group)
