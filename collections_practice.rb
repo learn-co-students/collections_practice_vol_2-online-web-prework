@@ -71,4 +71,7 @@ end
 
 def organize_schools(schools)
   
+  schools.sort_by { |k, v| v }
+  binding.pry
+  
 end  
