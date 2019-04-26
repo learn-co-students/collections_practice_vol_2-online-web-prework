@@ -48,10 +48,14 @@ def remove_non_strings(group)
 end  
 
 def count_elements(group)
-  item_count = 0
-  group.each {|set, item| item_count += 1 }
-    group[set][:counter] = item_count
-    return group
+  group.each do |set|
+    #binding.pry
+      set[:count] = nil
+    set.each do
+      count = set.keys.count
+        set[:count] = count
+    end 
+  end
 end  
 
 def merge_data(a, b)
@@ -72,6 +76,6 @@ end
 def organize_schools(schools)
   
   schools.sort_by { |k, v| v }
-  binding.pry
+  
   
 end  
