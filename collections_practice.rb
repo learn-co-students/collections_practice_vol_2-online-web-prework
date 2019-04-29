@@ -86,8 +86,14 @@ def find_cool(group)
 end  
 
 def organize_schools(schools)
+
+  org_schools = { }
   
-  schools.sort_by { |k, v| v }
-  
-  
+  schools.each do |name, location_hash|
+    location = location_hash[:location]
+    
+    org_schools[location] ||= []
+    org_schools[location] << name
+  end
+  org_schools
 end  
