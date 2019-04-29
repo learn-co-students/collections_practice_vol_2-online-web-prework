@@ -60,8 +60,19 @@ def count_elements(array)
 end
 
 def merge_data(a, b)
-  
-  
+  container = [ ]
+  a.each do |person_name|
+    name = person_name[:first_name]
+    
+    b.each do |person_data|
+      if person_data[name]
+        merged_person = person_data[name]
+          merged_person[:first_name] = name
+            container << merged_person
+       end
+    end   
+  end 
+  container
 end  
 
 def find_cool(group)
