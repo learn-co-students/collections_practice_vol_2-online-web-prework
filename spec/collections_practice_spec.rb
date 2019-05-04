@@ -1,175 +1,83 @@
-require 'spec_helper'
-
-describe 'collections practice vol 2.' do
-
-  let(:keys) {
-    [
-           {
-            :first_name => "blake"
-        },
-           {
-            :first_name => "ashley"
-        }
-    ]
-  }
-
-  let(:data) {
-    [
-           {
-             "blake" => {
-                :awesomeness => 10,
-                     :height => "74",
-                  :last_name => "johnson"
-            },
-            "ashley" => {
-                :awesomeness => 9,
-                     :height => 60,
-                  :last_name => "dubs"
-            }
-        }
-    ]
-  }
-
-  let(:merged_data) {
-    [
-           {
-             :first_name => "blake",
-            :awesomeness => 10,
-                 :height => "74",
-              :last_name => "johnson"
-        },
-           {
-             :first_name => "ashley",
-            :awesomeness => 9,
-                 :height => 60,
-              :last_name => "dubs"
-        }
-    ]
-  }
-
-  let(:cool) {
-    [
-            {
-                   :name => "ashley",
-            :temperature => "sort of cool"
-        },
-            {
-                   :name => "blake",
-            :temperature => "cool"
-        }
-    ]
-  }
-
-  let(:schools) {
-    {
-      "flatiron school bk" => {
-        :location => "NYC"
-      },
-      "flatiron school" => {
-        :location => "NYC"
-      },
-      "dev boot camp" => {
-        :location => "SF"
-      },
-      "dev boot camp chicago" => {
-        :location => "Chicago"
-      },
-      "general assembly" => {
-        :location => "NYC"
-      },
-      "Hack Reactor" => {
-        :location => "SF"
-      }
-    }
-  }
-  let(:organized_schools) {
-    {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
-     "SF"=>["dev boot camp", "Hack Reactor"],
-     "Chicago"=>["dev boot camp chicago"]}
-  }
-
-  describe '#begins_with_r' do
-    # Question 1
-
-    it 'Return true if every element of the tools array starts with an "r" and false otherwise.' do
-      expect(begins_with_r(["ruby", "rspec", "rails"])).to eq(true)
+def organize_schools(schools)
+  organized_schools = {}
+  schools.each do |name, location_hash|
+    location = location_hash[:location]
+    if organized_schools[location]
+      organized_schools[location] << name
+    else
+      organized_schools[location] = []
+      organized_schools[location] << name
     end
-
-    it "should return false if there's an element that does not begin with r" do
-      expect(begins_with_r(["ruby", "rspec", "sails"])).to eq(false)
-    end
-
   end
+  organized_schools
+end
 
-  describe '#contain_a' do
-    # Question 2
-
-    it "return all elements that contain the letter 'a'" do
-      expect(contain_a(["earth", "fire", "wind", "water", "heart"])).to eq(["earth", "water", "heart"])
-    end
-
+def begins_with_r(array)
+  flag = true
+  array.each do |element|
+    flag = false if element[0] != "r"
   end
+  flag
+end
 
-  describe '#first_wa' do
-
-    # Question 3
-
-    it "Return the first element that begins with the letters 'wa'" do
-      expect(first_wa(["candy", :pepper, "wall", :ball, "wacky"])).to eq("wall")
-    end
-
+def contain_a(array)
+  container = []
+  array.each do |element|
+    container << element if element.include?("a")
   end
+  container
+end
 
-  describe '#remove_non_strings' do
-    
-    # Hint: Use the method "class"  "blake".class
-
-    # Question 4
-
-    it "remove anything that's not a string from an array" do
-      expect(remove_non_strings(["blake", 1, :hello])).to eq(["blake"])
-    end
-
+def remove_non_strings(array)
+  container = []
+  array.each do |element|
+    container << element if element.is_a?(String)
   end
+  container
+end
 
-  describe '#count_elements' do
-
-    # Question 5
-
-    it 'count how many times something appears in an array' do
-      expect(count_elements([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])).to eq([{:name => "blake", :count => 2}, {:name => "ashley", :count => 1}])
+def first_wa(array)
+  first_wa = nil
+  array.each do |element|
+    if element.match(/wa/)
+      first_wa = element 
+      break
     end
-
   end
+  first_wa
+end
 
-  describe '#merge_data' do
+def find_cool(array)
+  container = []
+  array.each do |element|
+    container << element if element[:temperature] == "cool" 
+  end
+  container
+end
 
-    # Question 6
-
-    it 'combines two nested data structures into one' do
-      expect(merge_data(keys, data)).to eq(merged_data)
+def count_elements(array)
+  array.each do |original_hash|
+    original_hash[:count] = 0
+    name = original_hash[:name]
+    array.each do |hash|
+      if hash[:name] == name
+        original_hash[:count] += 1
+      end
     end
+  end.uniq
+end
 
-  end
-
-  describe '#find_cool' do
-
-    # Question 7
-
-    it 'find all cool hashes' do
-      expect(find_cool(cool)).to eq([{:name => "blake",:temperature => "cool"}])
+def merge_data(keys, values)
+  container = []
+  keys.each do |person_name|
+    name = person_name[:first_name]
+    values.each do |person_data|
+      if person_data[name]
+        merged_person = person_data[name]
+        merged_person[:first_name] = name
+        container << merged_person
+      end
     end
-
   end
-
-  describe '#organize_schools' do
-
-    # Question 8
-
-    it 'organizes the schools by location' do
-      expect(organize_schools(schools)).to eq(organized_schools)
-    end
-
-  end
-
+  container
 end
