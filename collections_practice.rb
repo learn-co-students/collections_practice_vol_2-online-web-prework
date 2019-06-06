@@ -48,14 +48,66 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
-count = 0
-arr = []
-array.each do |item|
-  #  puts "#{item}"
-  count +=1
-  item[:count] = count
-  puts "#{item[:name]}"
-  arr << item
+	arr = []
+  hash = {}
+	array.each do |item|
+    if hash.has_key?(item[:name])
+      hash[item[:name]] +=1
+    else
+      hash[item[:name]] = 1
+    end
+  end
+  hash.each do |key, value|
+    count = value
+    name = key
+    arr << {:name=>name,:count=>count}
+  end
+  arr
 end
-arr
+
+
+def merge_data(keys, data)
+	arr = []
+	name = ""
+	keys.each do |item|
+	  hash = {}
+		hash[:first_name] = item[:first_name]
+		hash[:motto]  = item[:motto]
+		arr << hash
+		data.each do |person|
+			name = hash[:first_name]
+			person[name].each do |key, val|
+				hash[key] = val
+			end
+		end
+	end
+	arr
+end
+
+def find_cool(cool)
+	hash = {}
+	arr = []
+	cool.each do |item|
+		hash[:name] = item[:name]
+		hash[:temperature] = item[:temperature]
+	end
+	arr << hash
+end
+
+
+def organize_schools(schools)
+	hash = {}
+	arr = []
+	schools.each do |name,location|
+		puts "#{name}, #{location}"
+		arr << name
+		location.each do |loc,state|
+			if hash.has_key?(state)
+				hash[state] = arr
+			else
+				hash[state] = schools[name]
+			end
+		end
+	end
+  hash
 end
