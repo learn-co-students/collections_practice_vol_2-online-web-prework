@@ -94,20 +94,19 @@ def find_cool(cool)
 	arr << hash
 end
 
-
 def organize_schools(schools)
 	hash = {}
-	arr = []
-	schools.each do |name,location|
-		puts "#{name}, #{location}"
-		arr << name
-		location.each do |loc,state|
-			if hash.has_key?(state)
-				hash[state] = arr
-			else
-				hash[state] = schools[name]
-			end
-		end
+	schools.each do |name,location_hash|
+		# binding.pry
+		location = location_hash[:location]
+		# if hash[location]
+		# 	hash[location] << name
+		# else
+		# 	hash[location] = []
+		# 	hash[location] << name
+		# end
+		hash[location] ||= [] #set empty array if hash doesn't have a key, otherwise just take existing key:value
+		hash[location] << name
 	end
   hash
 end
