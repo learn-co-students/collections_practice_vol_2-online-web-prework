@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'collections practice vol 2.' do
 
-  let(:keys) {
+  let(:data_1) {
     [
         {
             :first_name => "blake",
@@ -15,7 +15,7 @@ describe 'collections practice vol 2.' do
     ]
   }
 
-  let(:data) {
+  let(:data_2) {
     [
            {
              "blake" => {
@@ -66,38 +66,38 @@ describe 'collections practice vol 2.' do
     ]
   }
 
-  let(:schools) {
+  let(:campuses) {
     {
-      "flatiron school bk" => {
-        :location => "NYC"
+      "Flatiron School Manhattan" => {
+        :location => "NY"
       },
-      "flatiron school" => {
-        :location => "NYC"
+      "Access Labs" => {
+        :location => "NY"
       },
-      "dev boot camp" => {
-        :location => "SF"
+      "Flatiron School Chicago" => {
+        :location => "IL"
       },
-      "dev boot camp chicago" => {
-        :location => "Chicago"
+      "Flatiron School Houston" => {
+        :location => "TX"
       },
-      "general assembly" => {
-        :location => "NYC"
+      "Flatiron School Midtown" => {
+        :location => "NY"
       },
-      "Hack Reactor" => {
-        :location => "SF"
+      "Flatiron School Austin" => {
+        :location => "TX"
       }
     }
   }
-  let(:organized_schools) {
-    {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"],
-     "SF"=>["dev boot camp", "Hack Reactor"],
-     "Chicago"=>["dev boot camp chicago"]}
+  let(:organized_campuses) {
+    {"NY"=>["Flatiron School Manhattan", "Access Labs", "Flatiron School Midtown"],
+     "TX"=>["Flatiron School Houston", "Flatiron School Austin"],
+     "IL"=>["Flatiron School Chicago"]}
   }
 
   describe '#begins_with_r' do
     # Question 1
 
-    it 'Return true if every element of the tools array starts with an "r" and false otherwise.' do
+    it 'Return true if every element of the passed in array starts with an "r" and false otherwise.' do
       expect(begins_with_r(["ruby", "rspec", "rails"])).to eq(true)
     end
 
@@ -122,6 +122,17 @@ describe 'collections practice vol 2.' do
 
     it "Return the first element that begins with the letters 'wa'" do
       expect(first_wa(["candy", :pepper, "wall", :ball, "wacky"])).to eq("wall")
+
+      array_of_words = [
+        "paint",
+        "garage",
+        "housewares",
+        "walk",
+        "wait",
+        "television"
+      ]
+
+      expect(first_wa(array_of_words)).to eq("walk")
     end
 
   end
@@ -134,6 +145,7 @@ describe 'collections practice vol 2.' do
 
     it "remove anything that's not a string from an array" do
       expect(remove_non_strings(["blake", 1, :hello])).to eq(["blake"])
+      expect(remove_non_strings([[], {}, "", "h"])).to eq(["", "h"])
     end
 
   end
@@ -144,6 +156,7 @@ describe 'collections practice vol 2.' do
 
     it 'count how many times something appears in an array' do
       expect(count_elements([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])).to eq([{:name => "blake", :count => 2}, {:name => "ashley", :count => 1}])
+      expect(count_elements([{:title => "mayor"}, {:title => "governor"}, {:title => "governor"}])).to eq([{:title => "mayor", :count => 1}, {:title => "governor", :count => 2}])
     end
 
   end
@@ -153,7 +166,20 @@ describe 'collections practice vol 2.' do
     # Question 6
 
     it 'combines two nested data structures into one' do
-      expect(merge_data(keys, data)).to eq(merged_data)
+      expect(merge_data(data_1, data_2)).to eq(merged_data)
+      prices = [{:price => 10}, {:price => 50}]
+      types = [{:type => "toy"}, {:type => "food"}]
+      merged_prices_and_types = [
+        {
+          :type => "toy",
+          :price => 10
+        },
+        {
+          :type => "food",
+          :price => 50
+        }
+      ]
+      expect(merge_data(types, prices)).to eq(merged_prices_and_types)
     end
 
   end
@@ -168,12 +194,12 @@ describe 'collections practice vol 2.' do
 
   end
 
-  describe '#organize_schools' do
+  describe '#organize_campuses' do
 
     # Question 8
 
-    it 'organizes the schools by location' do
-      expect(organize_schools(schools)).to eq(organized_schools)
+    it 'organizes the campuses by location' do
+      expect(organize_campuses(campuses)).to eq(organized_campuses)
     end
 
   end
