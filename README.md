@@ -1,6 +1,10 @@
 # Collections Practice
 
-### Skills: iteration, arrays, hashes, nested data structures
+## Learning Goals
+
+- Practice Iteration over arrays and hashes
+- Practice accessing and comparing data in arrays and hashes
+- Navigate and create nested data structures
 
 ## Instructions
 
@@ -126,10 +130,11 @@ We would get in return:
 
 ### `merge_data`
 
-The `merge_data` method takes in two arrays of the same length, both containing hashes. It
-returns one array, the same length as the original, containing merged hashes -
-the first hash in both arrays should be merged together to become the first hash
-in the returned array, the same with the second, and all subsequent hashes.
+The `merge_data` method takes in two arrays of the same length, both containing
+hashes. It returns one array, the same length as the original, containing merged
+hashes - the first hash in both arrays should be merged together to become the
+first hash in the returned array, the same with the second, and all subsequent
+hashes.
 
 So, for example, if we passed in an array of hashes containing titles and an
 array of hashes containing names, we would get _one_ array containing hashes,
