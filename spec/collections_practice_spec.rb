@@ -17,18 +17,16 @@ describe 'collections practice vol 2.' do
 
   let(:data_2) {
     [
-           {
-             "blake" => {
-                :awesomeness => 10,
-                     :height => "74",
-                  :last_name => "johnson"
-            },
-            "ashley" => {
-                :awesomeness => 9,
-                     :height => 60,
-                  :last_name => "dubs"
-            }
-        }
+      {
+        :awesomeness => 10,
+        :height => "74",
+        :last_name => "johnson"
+      },
+      {
+        :awesomeness => 9,
+        :height => 60,
+        :last_name => "dubs"
+      }
     ]
   }
 
@@ -156,7 +154,7 @@ describe 'collections practice vol 2.' do
 
     it 'count how many times something appears in an array' do
       expect(count_elements([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])).to eq([{:name => "blake", :count => 2}, {:name => "ashley", :count => 1}])
-      expect(count_elements([{:title => "mayor"}, {:title => "governor"}, {:title => "governor"}])).to eq([{:title => "mayor", :count => 1}, {:title => "governor", :count => 2}])
+      expect(count_elements([{:name => "mayor"}, {:name => "mayor"}, {:name => "governor"}, {:name => "governor"}])).to eq([{:name => "mayor", :count => 2}, {:name => "governor", :count => 2}])
     end
 
   end
