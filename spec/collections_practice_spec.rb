@@ -152,7 +152,7 @@ describe 'collections practice vol 2.' do
 
     # Question 5
 
-    it 'count how many times something appears in an array' do
+    it 'updates provided hashes with a count of how many times they appear in the passed in array' do
       expect(count_elements([{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}])).to eq([{:name => "blake", :count => 2}, {:name => "ashley", :count => 1}])
       expect(count_elements([{:name => "mayor"}, {:name => "mayor"}, {:name => "governor"}, {:name => "governor"}])).to eq([{:name => "mayor", :count => 2}, {:name => "governor", :count => 2}])
     end
