@@ -1,6 +1,6 @@
-def organize_schools(schools)
+def organize_campuses(campus_hash)
   organized_schools = {}
-  schools.each do |name, location_hash|
+  campus_hash.each do |name, location_hash|
     location = location_hash[:location]
     if organized_schools[location]
       organized_schools[location] << name
@@ -39,7 +39,7 @@ end
 def first_wa(array)
   first_wa = nil
   array.each do |element|
-    if element.match(/wa/)
+    if element.match(/^wa/)
       first_wa = element
       break
     end
@@ -68,13 +68,9 @@ def count_elements(array)
 end
 
 def merge_data(arr1, arr2)
-  arr2[0].map do |name, prop_hash|
-    new_prop_hash = {}
-    arr1.each do |new_attr_hash|
-      if new_attr_hash[:first_name] == name
-        new_prop_hash = prop_hash.merge(new_attr_hash)
-      end
-    end
-    new_prop_hash
+  new_array = []
+  arr1.each_with_index do |element, index|
+    new_array.push(arr1[index].merge(arr2[index]))
   end
+  new_array
 end
