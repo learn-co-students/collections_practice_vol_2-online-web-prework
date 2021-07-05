@@ -1,0 +1,4 @@
+while x < namae_array.length do 
+    counter_array.push({:count => parallel_count_array[x], :name => namae_array[x]})
+  end
+  counter_array
