@@ -1,0 +1,1 @@
+if !shash[location[:location]] == location[:location]
