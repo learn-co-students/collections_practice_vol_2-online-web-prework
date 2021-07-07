@@ -1,0 +1,32 @@
+
+[1mFrom:[0m /home/placid-window-3704/collections_practice_vol_2-online-web-prework/collections_practice.rb @ line 73 Object#organize_schools:
+
+    [1;34m61[0m: [32mdef[0m [1;34morganize_schools[0m(schools)
+    [1;34m62[0m:   school_hash = {}
+    [1;34m63[0m: 
+    [1;34m64[0m:   [1;34m# Iterate through hash of school_name[0m
+    [1;34m65[0m:   [1;34m# Return location => school_name array[0m
+    [1;34m66[0m:   schools.each [32mdo[0m |value, key|
+    [1;34m67[0m:     location = key[[33m:location[0m]
+    [1;34m68[0m: 
+    [1;34m69[0m:     [1;34m# if school location doesn't exist, create and add first name to array[0m
+    [1;34m70[0m:     [32mif[0m school_hash[location].nil?
+    [1;34m71[0m:       school_hash[location] = []
+    [1;34m72[0m:       school_hash[location] << value
+ => [1;34m73[0m:       binding.pry
+    [1;34m74[0m:       puts [31m[1;31m"[0m[31mCreated first location and school name: #{school_hash}[0m[31m[1;31m"[0m[31m[0m
+    [1;34m75[0m: 
+    [1;34m76[0m:     [1;34m# else add to existing school name array [0m
+    [1;34m77[0m:     [32melse[0m
+    [1;34m78[0m:       [1;34m# How to simply add to array?[0m
+    [1;34m79[0m:       [1;34m#school_hash[key[:location]] = << name[0m
+    [1;34m80[0m:       [1;34m#school_hash["NYC"] = [array of stuff][0m
+    [1;34m81[0m:       
+    [1;34m82[0m:       [1;34m# puts "Added #{name} to school names: #{school_hash}"[0m
+    [1;34m83[0m:     [32mend[0m 
+    [1;34m84[0m: 
+    [1;34m85[0m:     [1;34m#puts school_hash[0m
+    [1;34m86[0m:     
+    [1;34m87[0m:   [32mend[0m 
+    [1;34m88[0m: [32mend[0m
+
